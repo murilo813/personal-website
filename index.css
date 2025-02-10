@@ -266,17 +266,15 @@ span {
     }
 }
 
-
-/* General modal styles */
 .modal {
-    display: none;  /* As modais começam ocultas */
+    display: none;  
     position: fixed;
-    z-index: 1000; /* Garante que a modal fique sobre o conteúdo */
-    left: 57%; /* Centraliza horizontalmente */
-    top: 130px; /* Distância do topo para ficar abaixo dos botões de navegação */
-    transform: translateX(-50%); /* Centraliza a modal */
-    width: 300px; /* Definir uma largura fixa */
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+    z-index: 1000;
+    left: 57%;
+    top: 130px; 
+    transform: translateX(-50%);
+    width: 300px; 
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .modal h2{
@@ -289,17 +287,17 @@ span {
 }
 
 .modal-content {
-    background-color: black; /* Caixa de fundo preta */
-    color: #fff; /* Texto branco */
-    border: 2px solid #8A2BE2; /* Borda roxa */
-    border-radius: 10px; /* Borda arredondada */
+    background-color: black; 
+    color: #fff; 
+    border: 2px solid #8A2BE2;
+    border-radius: 10px; 
     padding: 20px;
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.7); /* Brilho suave roxo ao redor */
-    transition: box-shadow 0.3s ease; /* Suaviza a transição do brilho */
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.7); 
+    transition: box-shadow 0.3s ease; 
 }
 
 .modal-content:hover {
-    box-shadow: 0 0 25px rgba(138, 43, 226, 1); /* Brilho mais intenso ao passar o mouse */
+    box-shadow: 0 0 25px rgba(138, 43, 226, 1); 
 }
 
 .close {
