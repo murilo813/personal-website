@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Portfolio WebSite</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo" id="murilo-name">murilo</a>
+            <nav>
+                <a href="#" class="active"> Home</a>
+                <a href="#" onclick="openModal('servicesModal')">Services</a>
+                <a href="#" onclick="openModal('skillsModal')">Skills</a>
+                <a href="#" onclick="openModal('educationModal')">Education</a>
+                <a href="#" onclick="openModal('experienceModal')">Experience</a>
+                <a href="#" onclick="openModal('contactModal')">Contact</a>
+            </nav>
+        </nav>
+    </header>
+    <div id="servicesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Services</h2>
+            <p>Back-End Development, Front-End Development, Database Management, Deployment and Hosting, Web Design, Web Development.</p>
+        </div>
+    </div>
+    
+    <div id="skillsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('skillsModal')">&times;</span>
+            <h2>Skills</h2>
+            <p>Skills in Python, JavaScript, HTML5, CSS3, Flask, PostgreSQL and english language.</p>
+        </div>
+    </div>
+    
+    <div id="educationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('educationModal')">&times;</span>
+            <h2>Education</h2>
+            <p>Studying Software Engineering.</p>
+        </div>
+    </div>
+    
+    <div id="experienceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('experienceModal')">&times;</span>
+            <h2>Experience</h2>
+            <p>3 years working on tools and websites for various company sectors, with a wide range of functions and services, integrating with PostgreSQL databases.</p>
+        </div>
+    </div>
+    
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contactModal')">&times;</span>
+            <h2>Contact</h2>
+            <p>Instagram, LinkedIn or my email murilodesouza555@gmail.com.</p>
+        </div>
+    </div>
+    <section class="home">
+        <div class="home-img">
+            <img src="https://res.cloudinary.com/dac7jnh9q/image/upload/v1739209817/pngwing.com_2_y1hs95.png">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>murilo</span></h1>
+            <h3 class="typing-text" >I'm a <span></span></h3>
+            <p>A programmer of Python, JavaScript, HTML|CSS, Flask, PostgreSQL and also a Web Designer </p>
+            <p>Software Engineering Student </p>
+            <p>I can build any website you want.</p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@muriloo.developer/videos"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://github.com/murilo813"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/murilo_gllx?igsh=aXlqaHEwbG5xNmww"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/murilo-de-souza-175899305/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="mailto:murilodesouza555@gmail.com" class="btn">Hire me</a>
+        </div>
+    </section>
+    <script>
+        let currentModal = null;
+
+        function openModal(modalId) {
+            if (currentModal) {
+                closeModal(currentModal);
+            }
+
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+
+            currentModal = modalId;
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+
+            currentModal = null;
+        }
+
+        var closeButtons = document.querySelectorAll(".close");
+        closeButtons.forEach(function(button) {
+            button.onclick = function() {
+                var modal = button.closest(".modal");
+                closeModal(modal.id);
+            };
+        });
+
+        window.onclick = function(event) {
+            var modalContent = document.querySelector(".modal-content");
+            if (event.target.classList.contains("modal") && !modalContent.contains(event.target)) {
+                closeModal(event.target.id);
+            }
+        };
+        document.getElementById('murilo-name').addEventListener('click', function() {
+            var muriloName = this;
+            muriloName.classList.add('clicked');
+            
+            setTimeout(function() {
+                muriloName.classList.remove('clicked');
+            }, 600);  
+        });
+    </script>
+</body>
+</html>
